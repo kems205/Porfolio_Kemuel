@@ -39,9 +39,7 @@ function App() {
       await Promise.all([
         loadProjects(),
         loadSkills(),
-        loadExperiences(),
-        loadTestimonials(),
-        loadBlogPosts()
+        loadExperiences()
       ]);
     } catch (error) {
       console.error('Error initializing data:', error);

@@ -14,8 +14,6 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filterCategory, setFilterCategory] = useState('all');
   const [contactForm, setContactForm] = useState({

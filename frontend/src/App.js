@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiMail, FiLinkedin, FiTwitter, FiPhone, FiMapPin, FiDownload, FiSun, FiMoon, FiMenu, FiX, FiCode, FiDatabase, FiServer, FiGlobe, FiShield, FiTool, FiArrowRight, FiEye, FiStar, FiCalendar, FiUser, FiCheck, FiFilter, FiSearch } from 'react-icons/fi';
-import { SiReact, SiNodedotjs, SiJavascript, SiPython, SiMongodb, SiDocker, SiLinux, SiNginx, SiExpress, SiTailwindcss, SiGit, SiPostman, SiVisualstudiocode, SiFigma, SiPhotoshop } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiJavascript, SiPython, SiMongodb, SiDocker, SiLinux, SiNginx, SiExpress, SiTailwindcss, SiGit, SiPostman, SiVisualstudiocode, SiFigma } from 'react-icons/si';
 import './App.css';
 
 const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';

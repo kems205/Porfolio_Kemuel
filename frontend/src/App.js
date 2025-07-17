@@ -75,24 +75,6 @@ function App() {
     }
   };
 
-  const loadTestimonials = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/testimonials`);
-      setTestimonials(response.data);
-    } catch (error) {
-      console.error('Error loading testimonials:', error);
-    }
-  };
-
-  const loadBlogPosts = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/blog`);
-      setBlogPosts(response.data);
-    } catch (error) {
-      console.error('Error loading blog posts:', error);
-    }
-  };
-
   const handleContactSubmit = async (e) => {
     e.preventDefault();
     try {

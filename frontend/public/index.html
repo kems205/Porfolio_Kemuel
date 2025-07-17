@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="description" content="Portfolio de BEZARA Kemuel - Développeur Full Stack & Administrateur Réseau" />
+    <meta name="keywords" content="développeur, full stack, réseau, web, React, Node.js, MongoDB, portfolio, kemuel, bezara" />
+    <meta name="author" content="BEZARA Kemuel" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kemuel-bezara.dev/" />
+    <meta property="og:title" content="BEZARA Kemuel - Développeur Full Stack & Administrateur Réseau" />
+    <meta property="og:description" content="Portfolio professionnel de BEZARA Kemuel, développeur full stack et administrateur réseau passionné par l'innovation technologique." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://kemuel-bezara.dev/" />
+    <meta property="twitter:title" content="BEZARA Kemuel - Développeur Full Stack & Administrateur Réseau" />
+    <meta property="twitter:description" content="Portfolio professionnel de BEZARA Kemuel, développeur full stack et administrateur réseau passionné par l'innovation technologique." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preload fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" as="style" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    
+    <title>BEZARA Kemuel - Portfolio</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "BEZARA Kemuel",
+      "jobTitle": "Développeur Full Stack & Administrateur Réseau",
+      "description": "Développeur full stack et administrateur réseau passionné par l'innovation technologique",
+      "url": "https://kemuel-bezara.dev",
+      "email": "kemuel.bezara@example.com",
+      "telephone": "+33 6 12 34 56 78",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "France"
+      },
+      "sameAs": [
+        "https://github.com/bezkemuel",
+        "https://linkedin.com/in/bezara-kemuel",
+        "https://twitter.com/bezkemuel"
+      ],
+      "knowsAbout": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Python",
+        "MongoDB",
+        "Docker",
+        "Linux",
+        "Administration Réseau",
+        "Développement Web"
+      ],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Formation Développement Web"
+      }
+    }
+    </script>
+    
+    <!-- Analytics placeholder -->
+    <!-- Google Analytics or other analytics code would go here -->
+  </head>
+  <body>
+    <noscript>
+      <div style="background: #10b981; color: white; padding: 1rem; text-align: center; font-family: Arial, sans-serif;">
+        <h1>JavaScript requis</h1>
+        <p>Ce portfolio nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.</p>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!-- Preloader -->
+    <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; display: flex; align-items: center; justify-content: center; z-index: 9999;">
+      <div style="text-align: center; color: #10b981;">
+        <div style="width: 60px; height: 60px; border: 3px solid rgba(16, 185, 129, 0.3); border-top: 3px solid #10b981; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 500;">Chargement du portfolio...</p>
+      </div>
+    </div>
+    
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      #preloader {
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      #preloader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+    
+    <script>
+      // Preloader script
+      window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+              preloader.remove();
+            }, 500);
+          }, 1000);
+        }
+      });
+      
+      // Dark mode detection
+      if (localStorage.getItem('darkMode') === 'true' || 
+          (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+      
+      // Smooth scrolling polyfill for older browsers
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
+        document.head.appendChild(script);
+        script.onload = function() {
+          window.__forceSmoothScrollPolyfill__ = true;
+          smoothscroll.polyfill();
+        };
+      }
+      
+      // Performance monitoring
+      if ('performance' in window) {
+        window.addEventListener('load', function() {
+          setTimeout(() => {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            if (perfData) {
+              console.log('Portfolio loaded in:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+            }
+          }, 0);
+        });
+      }
+      
+      // PWA install prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Show install button or notification
+        const installBtn = document.createElement('button');
+        installBtn.textContent = 'Installer l\'app';
+        installBtn.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #10b981;
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 8px;
+          font-weight: 500;
+          cursor: pointer;
+          z-index: 1000;
+          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        `;
+        
+        installBtn.addEventListener('click', () => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('PWA installed');
+            }
+            deferredPrompt = null;
+            installBtn.remove();
+          });
+        });
+        
+        document.body.appendChild(installBtn);
+        
+        // Auto-hide after 10 seconds
+        setTimeout(() => {
+          if (installBtn.parentNode) {
+            installBtn.remove();
+          }
+        }, 10000);
+      });
+    </script>
+  </body>
+</html>

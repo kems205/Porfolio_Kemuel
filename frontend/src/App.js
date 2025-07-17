@@ -130,8 +130,7 @@ function App() {
     'Git': SiGit,
     'Postman': SiPostman,
     'VS Code': SiVisualstudiocode,
-    'Figma': SiFigma,
-    'Photoshop': SiPhotoshop
+    'Figma': SiFigma
   };
 
   if (loading) {

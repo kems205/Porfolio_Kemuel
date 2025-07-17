@@ -1057,19 +1057,19 @@ html {
 
 /* Styles pour les interactions */
 .cursor-pointer {
-  @apply cursor-pointer;
+  cursor: pointer;
 }
 
 .cursor-not-allowed {
-  @apply cursor-not-allowed;
+  cursor: not-allowed;
 }
 
 .select-none {
-  @apply select-none;
+  user-select: none;
 }
 
 .select-all {
-  @apply select-all;
+  user-select: all;
 }
 
 /* Styles pour les focus */
